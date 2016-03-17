@@ -1,8 +1,12 @@
+
+
 $(document).ready(function() {
+	"use strict";
     document.onkeyup = keyCheck;
 });
 
 function keyCheck() {
+	"use strict";
     var keyID = event.keyCode;
     var curVal = $('.screen').val();
     var entered = keyID - 48;
@@ -13,11 +17,14 @@ function keyCheck() {
         // console.log('entered=' + entered);
     } else {
         switch (keyID) {
-        	  case 67:
+        	  case 67: //"c" key
         	     clearVal();
         	     break;
             case 88:
                 $('.screen').val(curVal + '*');
+                break;
+             case 190:
+                $('.screen').val(curVal + '.');
                 break;
             case 191:
                 $('.screen').val(curVal + '/');

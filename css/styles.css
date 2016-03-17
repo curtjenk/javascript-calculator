@@ -6,13 +6,14 @@
  
  #calculator {
  	   font-family: 'Orbitron', sans-serif;
+ 	   font-size: 20px;
      max-width: 400px;
      padding: 20px 20px 9px;
      margin-top: 100px;
      /*background: #0000FF;*/
      background: linear-gradient(#9dd2ea, #0000FF);
      border-radius: 5px;
-     box-shadow: 0 4px #009de4, 0 10px 15px rgba(0, 0, 0, .2);
+     /*box-shadow: 0 4px #009de4, 0 10px 15px rgba(0, 0, 0, .2);*/
  }
  
  .toprow {
@@ -21,8 +22,10 @@
  .screen {
      width: 100%;
      height: 30px;
+     padding-top: 5px;
      margin-left: 17px;
-     background: rgba(0, 0, 0, 0.2);
+     /*background-color: black;*/
+     background-color: rgba(0, 0, 0, 0.2);
      border-radius: 3px;
      box-shadow: inset 0 4px rgba(0, 0, 0, .2);
  }
@@ -33,14 +36,15 @@
      color: white;
      width: 50px;
      padding: 0px 0px;
-     font-size: 20px;
+     /*font-size: 20px;*/
  }
  
  .number,
  .operator {
      height: 36px;
      width: 66px;
-     background: white;
+     /*background: white;*/
+     background: radial-gradient(circle, #fff 20%, #ccc);
      color: black;
      border-radius: 5px;
      box-shadow: 0 4px rgba(0, 0, 0, .2);
@@ -50,6 +54,7 @@
  
  .operator {
      background: yellow;
+     background: radial-gradient(circle, #ECFF88 20%, yellow);
  }
  
  input[name="equal"] {
