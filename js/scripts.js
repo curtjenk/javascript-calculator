@@ -1,12 +1,20 @@
-
-
 $(document).ready(function() {
-	"use strict";
+    "use strict";
     document.onkeyup = keyCheck;
+
+    $('.operator, .number, .equal, .clear').click(function() {
+        if ($(this).hasClass('equal')) {
+            doIt();
+        } else if ($(this).hasClass('clear'))  {
+        		clearVal();
+        } else {
+            btnClick($(this).val());
+        }
+    });
 });
 
 function keyCheck() {
-	"use strict";
+    "use strict";
     var keyID = event.keyCode;
     var curVal = $('.screen').val();
     var entered = keyID - 48;
@@ -17,13 +25,13 @@ function keyCheck() {
         // console.log('entered=' + entered);
     } else {
         switch (keyID) {
-        	  case 67: //"c" key
-        	     clearVal();
-        	     break;
+            case 67: //"c" key
+                clearVal();
+                break;
             case 88:
                 $('.screen').val(curVal + '*');
                 break;
-             case 190:
+            case 190:
                 $('.screen').val(curVal + '.');
                 break;
             case 191:
@@ -33,11 +41,11 @@ function keyCheck() {
                 $('.screen').val(curVal + '-');
                 break;
             case 187:
-            console.log("hit equal");
-               //equal
+                console.log("hit equal");
+                //equal
                 break;
             case 13:
-            // console.log("hit enter/return key");
+                // console.log("hit enter/return key");
                 doIt();
                 break;
         }
@@ -50,19 +58,24 @@ function btnClick(value) {
 }
 
 function doIt() {
-	var results;
-	try {
-    results = eval($('.screen').val());
-  } catch (e) {
-  	if ( e instanceof SyntaxError || e instanceof ReferenceError) {
-  		alert(e);
-  	}
-  	console.log(e);
-  	return;
-  }
-   $('.screen').val(results);
+    var results;
+    try {
+        results = eval($('.screen').val());
+    } catch (e) {
+        if (e instanceof SyntaxError || e instanceof ReferenceError) {
+            alert(e);
+        }
+        console.log(e);
+        return;
+    }
+    $('.screen').val(results);
+    if (results == 42) {
+    	$('#meaning').addClass('move');
+    }
+
 }
 
 function clearVal() {
     $('.screen').val('');
+    $('#meaning').removeClass('move');
 }

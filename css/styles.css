@@ -5,8 +5,8 @@
  }
  
  #calculator {
- 	   font-family: 'Orbitron', sans-serif;
- 	   font-size: 20px;
+     font-family: 'Orbitron', sans-serif;
+     font-size: 20px;
      max-width: 400px;
      padding: 20px 20px 9px;
      margin-top: 100px;
@@ -17,8 +17,9 @@
  }
  
  .toprow {
- 	margin-bottom: 10px;
+     margin-bottom: 10px;
  }
+ 
  .screen {
      width: 100%;
      height: 30px;
@@ -36,11 +37,12 @@
      color: white;
      width: 50px;
      padding: 0px 0px;
-     /*font-size: 20px;*/
+     outline: none;
  }
  
  .number,
- .operator {
+ .operator,
+ .equal {
      height: 36px;
      width: 66px;
      /*background: white;*/
@@ -62,9 +64,21 @@
      font-size: 21px;
      color: black;
  }
-
+ 
  input[name='decimal'] {
- 	 /*background: lightblue;*/
- 	  color: #0000FF;
- 	  font-size: 21px;
+     /*background: lightblue;*/
+     color: #000;
+     font-size: 21px;
+ }
+ 
+ #meaning {
+     position: absolute;
+     left: -500px;
+     top: 40%;
+ }
+ 
+ #meaning.move {
+     left: 2000px;
+     border: 15px red solid;
+     transition: all 4s ease;
  }
