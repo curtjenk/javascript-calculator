@@ -22,7 +22,7 @@
               <input type="button" name="clear" class="clear" onclick="clearVal()" value="C">
             </div>
             <div class="col-sm-10">
-              <input readonly type="text" name="input" class="screen">
+              <input disabled type="text" name="input" class="screen">
             </div>
           </div>
           <div class="col-sm-12">
@@ -71,12 +71,13 @@
             <div class="col-sm-3">
               <input type="button" name="zero" class="number" onclick="btnClick(0)" value="0">
             </div>
-            <div class="col-sm-3">
-              <input type="button" name="equal" class="operator" onclick="doit()" value="=">
+             <div class="col-sm-3">
+              <input type="button" name="decimal" class="number" onclick="btnClick('c')" value=".">
             </div>
             <div class="col-sm-3">
-              <input type="button" name="empty" class="number" onclick="" value="">
+              <input type="button" name="equal" class="operator" onclick="doIt()" value="=">
             </div>
+           
             <div class="col-sm-3">
               <input type="button" name="divide" class="operator" onclick="btnClick('/')" value="&divide;">
             </div>

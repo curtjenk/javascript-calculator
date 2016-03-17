@@ -58,7 +58,8 @@
      color: black;
  }
 
- input[name='empty'] {
+ input[name='decimal'] {
  	 /*background: lightblue;*/
- 	  background: #0000FF;
+ 	  color: #0000FF;
+ 	  font-size: 21px;
  }

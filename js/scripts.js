@@ -1,39 +1,61 @@
-
 $(document).ready(function() {
-	document.onkeyup = keyCheck;
+    document.onkeyup = keyCheck;
 });
 
 function keyCheck() {
-	var keyID = event.keyCode;
-	var curVal = $('.screen').val();
-	var entered = keyID - 48;
-	console.log('keyID=' + keyID);
+    var keyID = event.keyCode;
+    var curVal = $('.screen').val();
+    var entered = keyID - 48;
+    console.log('keyID=' + keyID);
 
-	if (entered >= 0 && entered < 10) {
-			$('.screen').val(curVal + entered );
-				console.log('entered=' + entered);
-	}
-	// console.log(entered);
-	// console.log(keyID);
-	// switch(keyID) {
-	// 	case 49:{
-	// 		$('.screen').val(newVal + '1' );
-	// 		break;
-	// 	}
-	// }
-
+    if (entered >= 0 && entered < 10) {
+        $('.screen').val(curVal + entered);
+        // console.log('entered=' + entered);
+    } else {
+        switch (keyID) {
+        	  case 67:
+        	     clearVal();
+        	     break;
+            case 88:
+                $('.screen').val(curVal + '*');
+                break;
+            case 191:
+                $('.screen').val(curVal + '/');
+                break;
+            case 189:
+                $('.screen').val(curVal + '-');
+                break;
+            case 187:
+            console.log("hit equal");
+               //equal
+                break;
+            case 13:
+            // console.log("hit enter/return key");
+                doIt();
+                break;
+        }
+    }
 }
 
 function btnClick(value) {
-	var curVal = $('.screen').val();
-	$('.screen').val(curVal + value );
+    var curVal = $('.screen').val();
+    $('.screen').val(curVal + value);
 }
 
-function doit() {
-	var results = eval($('.screen').val());
-  $('.screen').val(results);
+function doIt() {
+	var results;
+	try {
+    results = eval($('.screen').val());
+  } catch (e) {
+  	if ( e instanceof SyntaxError || e instanceof ReferenceError) {
+  		alert(e);
+  	}
+  	console.log(e);
+  	return;
+  }
+   $('.screen').val(results);
 }
 
 function clearVal() {
-  $('.screen').val('');
+    $('.screen').val('');
 }
