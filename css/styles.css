@@ -1,0 +1,64 @@
+ body {
+     background: radial-gradient(circle, #fff 20%, #ccc);
+     height: 100vh;
+     /*100vh = view port height guarantees we can't take more than page*/
+ }
+ 
+ #calculator {
+ 	   font-family: 'Orbitron', sans-serif;
+     max-width: 400px;
+     padding: 20px 20px 9px;
+     margin-top: 100px;
+     /*background: #0000FF;*/
+     background: linear-gradient(#9dd2ea, #0000FF);
+     border-radius: 5px;
+     box-shadow: 0 4px #009de4, 0 10px 15px rgba(0, 0, 0, .2);
+ }
+ 
+ .toprow {
+ 	margin-bottom: 10px;
+ }
+ .screen {
+     width: 100%;
+     height: 30px;
+     margin-left: 17px;
+     background: rgba(0, 0, 0, 0.2);
+     border-radius: 3px;
+     box-shadow: inset 0 4px rgba(0, 0, 0, .2);
+ }
+ 
+ .clear {
+     background: #FF4D51;
+     box-shadow: 0px 2px #ff7c87;
+     color: white;
+     width: 50px;
+     padding: 0px 0px;
+     font-size: 20px;
+ }
+ 
+ .number,
+ .operator {
+     height: 36px;
+     width: 66px;
+     background: white;
+     color: black;
+     border-radius: 5px;
+     box-shadow: 0 4px rgba(0, 0, 0, .2);
+     margin: 0 7px 11px 0;
+     outline: none;
+ }
+ 
+ .operator {
+     background: yellow;
+ }
+ 
+ input[name="equal"] {
+     background: lightgreen;
+     font-size: 21px;
+     color: black;
+ }
+
+ input[name='empty'] {
+ 	 /*background: lightblue;*/
+ 	  background: #0000FF;
+ }
