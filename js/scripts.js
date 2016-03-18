@@ -1,5 +1,8 @@
+var height = $('#calculator').height();
 $(document).ready(function() {
-    "use strict";
+    //get the calculator's height
+    height = $('#calculator').outerHeight();
+
     document.onkeyup = keyCheck;
 
     $('.operator, .number, .equal, .clear').click(function() {
@@ -10,6 +13,11 @@ $(document).ready(function() {
         } else {
             btnClick($(this).val());
         }
+    });
+
+    $('.card__back').click(function () {
+        $('.card.effect__EasterEgg').removeClass('flipped');
+        
     });
 });
 
@@ -42,6 +50,7 @@ function keyCheck() {
                 break;
             case 187:
                 console.log("hit equal");
+                doIt();
                 //equal
                 break;
             case 13:
@@ -69,8 +78,26 @@ function doIt() {
         return;
     }
     $('.screen').val(results);
+    //---- Easter Eggs! 
     if (results == 42) {
     	$('#meaning').addClass('move');
+    }
+    if (results == 360) {
+        //make calculator spin
+        $('#calculator').addClass('spin');
+    }
+    
+    if (results == 7734) {
+        // $('#calculator').addClass('flip');
+        $('.card.effect__EasterEgg').addClass('flipped');
+        
+        console.log(height);
+        $('#calculatorBack').css('height', height + 'px');
+    }
+    if (results > 1000000)
+    {
+        var win = window.open('http://www.google.com', '_blank');
+        win.focus();
     }
 
 }
@@ -78,4 +105,6 @@ function doIt() {
 function clearVal() {
     $('.screen').val('');
     $('#meaning').removeClass('move');
+    $('#calculator').removeClass('spin');
+    $('#calculator').removeClass('up-side-down');
 }
